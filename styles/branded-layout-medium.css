@@ -1,0 +1,6 @@
+@media ( min-width: 992px ) {
+	.main-content .carousel-inner,
+	.main-content .carousel-inner > .item { height: 410px; }
+
+	.main-content .cms_menu_section_blocks .main-content-menu-block-items { padding-bottom: 0; }
+}

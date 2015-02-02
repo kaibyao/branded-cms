@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<div class="branded-thank-you">
+	<h2 class="branded-thank-you-title">Thank you for letting us know there was a problem.</h2>
+	<p class="branded-thank-you-text">We’ll get right on it! You can <a href="/incident_list.do?sysparm_query=active=true^caller_id=javascript:gs.getUserID()">check the status of this request</a> in the <a href="it_support.do" target="_top">IT Support</a> page.</p>
+</div>
+
+</j:jelly>

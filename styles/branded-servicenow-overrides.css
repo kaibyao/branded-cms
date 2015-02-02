@@ -1,0 +1,43 @@
+/* Overriding default CMS/Iframed styles */
+
+table, input, select, button, input.text, textarea, input.button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+/* Iframed forms and lists */
+html[data-doctype=true] body[data-formName="ui_page_render"] { margin: 0; }
+html[data-doctype=true] div.section_header_content_no_scroll { overflow: visible; }
+div.form_title { font-size: 14px; }
+.label { display: block; font-size: inherit; line-height: inherit; }
+.label label { margin-bottom: 0; }
+
+.breadcrumb { padding: 0; background: transparent; }
+
+/* Service Catalog */
+#category_description, #navigatordetailTop { display: none; }
+
+.sc_category_item .details_div td,
+.sc_category_item_hover .details_div td,
+.catalog_description > table > tbody > tr > td { padding: 10px; }
+.sc_category_item .details_div h3:first-child,
+.sc_category_item_hover .details_div h3:first-child,
+.catalog_description > table > tbody > tr > td > h3:first-child { margin-top: 0; }
+
+/* Catalog Shopping Cart Container */
+#cartContent { padding: 10px; border: 1px solid #ccc; }
+.sc_cat_set_window, .sc_cart_window { margin: 0; border: 0 none; }
+.sc_cart_window { min-width: 175px; width: 100% !important; }
+
+
+/* Catalog Shopping Cart Top */
+#cartContent_header { padding-bottom: 10px; }
+#cart { padding: 0 10px; border: 0 none; }
+#adder { border: 1px solid #CCC; margin-bottom: 10px; padding: 10px; }
+#qty { margin-top: 10px; }
+
+/* Catalog Shopping Cart Bottom */
+.sc_cart_subtotal_row td { padding-top: 10px; }
+
+/* Live Feed */
+.main-content .live_feed_column { padding: 0; }

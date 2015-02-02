@@ -1,0 +1,45 @@
+@media ( min-width: 768px ) {
+	div.cms_header_search, .cms_header_font_size, .cms_header_login, div.cms_header_top_menu { float: right; padding: 0 15px; text-align: center; }
+
+	div.cms_header_top_menu,
+	td.cms_header_text { position: relative !important; }
+	.cms_header_top_menu .cms_menu_super_menu_content,
+	.cms_header_text .cms_menu_super_menu_content {
+		position: absolute;
+		padding: 10px 15px;
+		text-align: left;
+		background: #fff;
+		border: 1px solid #666;
+		z-index: 1;
+	}
+	.cms_header_text .cms_menu_section_blocks_title h2,
+	.branded-chat-link {
+		margin: 0;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.05em;
+		line-height: 1.5;
+		text-transform: uppercase;
+		vertical-align: middle;
+	}
+
+	.cms_header_top_menu .cms_menu_section_blocks_title h2 { display: none; }
+	.cms_header_top_menu .cms_menu_super_menu_content { min-width: 300px; }
+	.branded-icon-chat { margin-right: 10px; }
+
+	.main-content .carousel { display: block; margin-bottom: 40px; }
+	.main-content .carousel-inner,
+	.main-content .carousel-inner > .item { height: 310px; }
+	.main-content .carousel-inner > .item { position: absolute; top: 0; left: 0; }
+	.main-content .carousel-control,
+	.main-content .carousel-indicators { display: none; }
+	.main-content .carousel-caption { left: 10%; right: 10%; text-shadow: 0 0px 5px rgba(0, 0, 0, 0.8); }
+	.main-content .carousel-caption h3 {
+		font-weight: 500;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.branded-footer-left { text-align: left; }
+	.branded-footer-right { text-align: right; }
+}

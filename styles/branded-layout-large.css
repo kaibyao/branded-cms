@@ -1,0 +1,7 @@
+@media ( min-width: 1200px ) {
+	.main-content .carousel-inner,
+	.main-content .carousel-inner > .item { height: 500px; }
+
+	.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 { font-size: 24px; }
+	.main-content .cms_menu_section_blocks .cms_menu_second_level_text { font-size: 14px; }
+}

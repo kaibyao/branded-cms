@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<footer class="branded-footer">
+	<div class="row">
+		<div class="branded-footer-left col-xs-12 col-md-8">Terms &amp; Conditions</div>
+		<div class="branded-footer-right col-xs-12 col-md-4">Branded CMS Template</div>
+	</div>
+</footer>
+
+</j:jelly>

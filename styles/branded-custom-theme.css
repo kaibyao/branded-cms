@@ -1,0 +1,19 @@
+/*********
+Here you can apply custom color theming to the Branded CMS Template.
+
+For a nice way to experiment with colors, see https://color.adobe.com/create/color-wheel/. An even simpler color picker can be found at http://colorpicker.com/.
+*********/
+
+/* General Link Styles */
+a {
+	color: #D1232B;
+	transition: color 200ms;
+}
+a:hover { /* When the mouse is hovering over a link */
+	color: #A61C23;
+	text-decoration: none; /* removes underlines when hovering */
+}
+a:active, a:focus { /* When the mouse is in the middle of a click or just after a link has been clicked */
+	color: #A61C23;
+	text-decoration: underline;
+}

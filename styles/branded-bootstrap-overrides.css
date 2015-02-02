@@ -1,0 +1,31 @@
+/* Concessions made to Bootstrap Styles because of ServiceNow's layout engine. */
+
+/* Fade Carousel */
+.carousel .carousel-inner .item { display: block; opacity: 0; transition: opacity 1.5s; }
+.carousel .carousel-inner .active { opacity: 1; }
+.carousel .carousel-inner .left,
+.carousel .carousel-inner .right { left: 0; }
+.carousel .carousel-inner > .item.prev,
+.carousel .carousel-inner > .item.active.left { transform: none; -webkit-transform: none; }
+
+/* Margins for columns have to be changed for table cells (margins don't affect them) */
+td.row > table > thead > tr > th[class*="col-"]:first-child,
+td.row > table > tbody > tr > td[class*="col-"]:first-child,
+td.row > div[class*="col-"]:first-child {
+	padding-left: 0;
+}
+
+td.row > table > thead > tr > th[class*="col-"]:last-child,
+td.row > table > tbody > tr > td[class*="col-"]:last-child,
+td.row > div[class*="col-"]:last-child {
+	padding-right: 0;
+}
+
+/* I can't seem to include ttf or svg files into Share, so these will have to be commented out for now */
+@font-face {
+	font-family: 'Glyphicons Halflings';
+
+	src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot');
+	src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.woff') format('woff');
+	/*src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.woff') format('woff'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.ttf') format('truetype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');*/
+}

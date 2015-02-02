@@ -1,0 +1,18 @@
+<div class="branded-chat-department">
+	<img class="branded-icon-chat" src="/branded-icon-chat.pngx" />
+	<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, 'c54f0abf0a0a0b452db84664f409c79c', 'Service Desk Chat'); return false;">
+		Service Desk Chat
+	</a>
+</div>
+<div class="branded-chat-department">
+	<img class="branded-icon-chat" src="/branded-icon-chat.pngx" />
+	<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, '3579104f95eaa100411ccc89dd29a293', 'Facilities Chat'); return false;">
+		Facilities Chat
+	</a>
+</div>
+<div class="branded-chat-department">
+	<img class="branded-icon-chat" src="/branded-icon-chat.pngx" />
+	<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, '4a936a590f2121002b58f25be1050e8a', 'HR Chat'); return false;">
+		Human Resources Chat
+	</a>
+</div>
