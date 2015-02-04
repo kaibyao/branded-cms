@@ -38,32 +38,36 @@ Required libraries created.
 
 ## v1.2
 
-### Improved Interface
-* Style the dropzones in Layout Edit View
-
 ### Bug Fixes
 * Use .page-home instead of .main-content for banner styles
-* HR Knowledge Search Results shows 2 search bars.
-* "Admin Section" should not highlight on mouseover.
-* Shortened Banner on main page
-* Fix horizontal menu auto-column script (see mars)
-* Fonts embedded in stylesheet.
-* Create workaround for jQuery not working in Fuji (Use Require.js)
+* HR Knowledge Search Results showed 2 search bars. It now shows 1.
+* "Admin Section" will no longer highlight on mouseover.
+
+### Interface Improvements
+* Shortened banner on home page.
+* Horizontal block menu items now automatically calculate whether to spill over into a new row or remain in the same row.
+* Fonts are now embedded in stylesheet. Users will no longer have to manually update a separate font file.
+
 
 ## v1.3
 
 ### Bug Fixes
 * Fix the jitteryness of the Knowledge page in IE9.
+* Create workaround for jQuery not working in Fuji (Use Require.js)
 
 ### Improved Interface
 * Add Filter buttons to the Knowledge page.
 
 
-
 ## v2.0
+
+### Bug Fixes
+* Uses Require.JS to load JS files (cause our javascript loader is currently broken in Fuji)
+
+### Improved Interface
+* Style the dropzones in Layout Edit View
 * Better fonts for menus
 * Mobile Main Menu
-* Uses Require.JS to load JS files (cause our javascript loader is currently broken in Fuji)
 
 ## v2.1
 * Improved Catalog + Shopping Cart
