@@ -28,16 +28,38 @@ jQuery.noConflict();
 			$j( '.main-content .cms_menu_section_blocks' ).each( function( i, el ) {
 				var $menuBlock = $j( el ),
 					$menuBlockParent = $menuBlock.parent(),
-					numBlocksPerRow = 1,
+					numBlocks = $menuBlock.siblings().length + 1,
+					maxBlocksPerRow = 4,
 					columnsPerRow = 12,
-					columnsPerBlock;
+					columnsPerBlock,
+					tempMod,
+					i;
 
 				if ( !$menuBlockParent.hasClass( 'row' ) ) {
 					$menuBlockParent.addClass( 'row' );
 				}
 
-				numBlocksPerRow += $menuBlock.siblings().length;
-				columnsPerBlock = Math.floor( columnsPerRow / numBlocksPerRow );
+				if ( numBlocks > maxBlocksPerRow ) {
+					if ( numBlocks % 4 === 0 ) {
+						columnsPerBlock = 4;
+					} else if ( numBlocks % 3 === 0 ) {
+						columnsPerBlock = 3;
+					} else {
+						for ( i = maxBlocksPerRow; i >= 3; i-- ) {
+							switch ( numBlocks % i ) {
+								case 1 :
+									continue;
+								case 0 :
+								case 2 :
+								case 3 :
+									columnsPerBlock = columnsPerRow / i;
+									break;
+							}
+						}
+					}
+				} else {
+					columnsPerBlock = Math.floor( columnsPerRow / numBlocks );
+				}
 
 				$menuBlock.addClass( 'col-xs-12 col-md-' + columnsPerBlock );
 			} );

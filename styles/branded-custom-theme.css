@@ -17,3 +17,7 @@ a:active, a:focus { /* When the mouse is in the middle of a click or just after 
 	color: #A61C23;
 	text-decoration: underline;
 }
+
+/* Menu Links */
+.branded-main-menu-container a { color: #777; }
+.branded-main-menu-container a:hover { color: #000; }

@@ -2,6 +2,11 @@
 
 .page-title, .branded-admin-nav, #page_timing_div { display: none; }
 
+/* Admin Bar */
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus { color: #9d9d9d; }
+
+/* Header */
 .cms_header { padding-bottom: 40px; }
 
 .cms_header_top_menu .cms_menu_super_menu_content { display: none; }
@@ -32,11 +37,12 @@ div.cms_header_text,
 .cms_header_text .cms_menu_super_menu_content { display: none; }
 
 /* Home Page */
-.main-content .carousel { display: none; }
+.page-home .carousel { display: none; }
+.page-home .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 10px; border-bottom: 1px solid #999; }
 
+/* Home Pages */
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_image_left { width: 90px; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 20px; }
-.page-home .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 10px; border-bottom: 1px solid #999; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 {
 	margin: 0;
 	font-size: 22px;
@@ -55,7 +61,6 @@ div.cms_header_text,
 	font-size: 18px;
 }
 
-/* Home Pages */
 .main-content .cms_menu_vertical_block .cms_menu_vertical_blocks_image_left { width: 90px; }
 .main-content .cms_menu_vertical_block td.cms_menu_vertical_blocks_title { padding-left: 20px; }
 .main-content .cms_menu_vertical_block .cms_menu_vertical_blocks_title h2 {

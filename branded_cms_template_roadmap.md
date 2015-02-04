@@ -40,14 +40,6 @@ Required libraries created.
 
 ### Improved Interface
 * Style the dropzones in Layout Edit View
-* Better fonts for menus
-* Mobile Main Menu
-* Improved Catalog + Shopping Cart
-* Improved Login Screen
-* Improved Search Page
-* Improved Forms & Lists
-* Improved Chat
-* Live Feed
 
 ### Bug Fixes
 * Use .page-home instead of .main-content for banner styles
@@ -55,6 +47,28 @@ Required libraries created.
 * "Admin Section" should not highlight on mouseover.
 * Shortened Banner on main page
 * Fix horizontal menu auto-column script (see mars)
+* Fonts embedded in stylesheet.
+* Create workaround for jQuery not working in Fuji (Use Require.js)
 
-## Future
-* Better edit page dropzones?
+## v1.3
+
+### Bug Fixes
+* Fix the jitteryness of the Knowledge page in IE9.
+
+### Improved Interface
+* Add Filter buttons to the Knowledge page.
+
+
+
+## v2.0
+* Better fonts for menus
+* Mobile Main Menu
+* Uses Require.JS to load JS files (cause our javascript loader is currently broken in Fuji)
+
+## v2.1
+* Improved Catalog + Shopping Cart
+* Improved Login Screen
+* Improved Search Page
+* Improved Forms & Lists
+* Improved Chat
+* Live Feed
