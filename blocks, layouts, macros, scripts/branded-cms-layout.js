@@ -1,6 +1,14 @@
-jQuery.noConflict();
+( function() {
+	// $j.getScript( '/require.jsdbx' ).done( function() {
+	// 	//require.config( {
+	// 	//	baseUrl: "/"
+	// 	//} );
 
-( function( $j ) {
+	// 	require( [ '/branded-jquery.min.jsdbx', '/bootstrap.min.jsdbx', '/respond.min.jsdbx', '/branded-cms-layout.jsdbx' ], function() {
+			
+	// 	} );
+	// } );
+
 	var applyBrandedStyles = function() {
 			var $headerLogoContainer = $j( 'td.cms_header_logo' );
 
@@ -64,7 +72,12 @@ jQuery.noConflict();
 				$menuBlock.addClass( 'col-xs-12 col-md-' + columnsPerBlock );
 			} );
 
+			$j( '.page-home .main-content .cms_menu_section_blocks' ).first().parent().addClass( 'home-block-row' ).removeClass( 'row' );
+
 			$j( '.main-content .cms_menu_section_blocks > table > tbody > tr:nth-child(2) > td' ).addClass( 'main-content-menu-block-items' );
+			// $j( '.page-home .main-content .row' ).appendTo( '.page-home .main-content .carousel-inner' );
+
+			$j( '.branded-admin-nav' ).prependTo( 'body' ).show();
 		},
 
 		hideAdminBar = function() {
@@ -92,4 +105,4 @@ jQuery.noConflict();
 		};
 	} );
 
-} )( jQuery );
+} )();

@@ -20,10 +20,6 @@
 		</div><!-- /.container -->
 	</nav>
 
-	<script>
-		jQuery( '.branded-admin-nav' ).prependTo( 'body' ).show();
-	</script>
-
 </j:if>
 
 </j:jelly>
