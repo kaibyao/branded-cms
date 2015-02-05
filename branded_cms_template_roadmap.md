@@ -54,6 +54,7 @@ Required libraries created.
 ### Bug Fixes
 * Fix the jitteryness of the Knowledge page in IE9.
 * Create workaround for jQuery not working in Fuji (Use Require.js)
+* Different Knowledge Pages aren't actually filtering based on departments
 
 ### Improved Interface
 * Add Filter buttons to the Knowledge page.
@@ -68,6 +69,11 @@ Required libraries created.
 * Style the dropzones in Layout Edit View
 * Better fonts for menus
 * Mobile Main Menu
+
+### Changes from 1.x
+* Home Page Block Menu has submenu items removed
+* @font-face CSS code has been moved to "Bootstrap Overrides" stylesheet (will be retroactively patched into 1.x)
+
 
 ## v2.1
 * Improved Catalog + Shopping Cart

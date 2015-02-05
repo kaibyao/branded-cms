@@ -2,5 +2,18 @@
 	.page-home .carousel-inner,
 	.page-home .carousel-inner > .item { height: 330px; }
 
+	.page-home .carousel-caption {
+		top: 20%;
+		right: 50%;
+		bottom: auto;
+		left: 0;
+		text-align: left;
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	.page-home .home-block-row { margin-top: -145px; }
+	.page-home .home-block-row .cms_menu_section_blocks > table { background: #fff; background: rgba( 255, 255, 255, 0.9 ); }
+	.page-home .home-block-row .cms_menu_section_blocks_title { padding-left: 10px; }
+
 	.main-content .cms_menu_section_blocks .main-content-menu-block-items { padding-bottom: 0; }
 }
