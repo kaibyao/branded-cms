@@ -30,7 +30,13 @@
 			$j( '.cms_header_logo_row > td' ).addClass( 'row' );
 			$j( 'td.cms_header_logo' ).addClass( 'col-xs-6 col-md-2' );
 			$j( 'td.cms_header_text' ).first().addClass( 'branded-main-menu-container col-xs-6 col-md-10' );
-			$j( '.cms_header_bottom_menu' ).children().appendTo( '.branded-main-menu-container' );
+			// $j( '.cms_header_bottom_menu' ).children().appendTo( '.branded-main-menu-container' );
+
+			// Chat div
+			$j( document.createElement( 'div' ) ).
+				addClass( 'branded-chat-container' ).
+				append( '<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, \'c54f0abf0a0a0b452db84664f409c79c\', \'Chat With Support\'); return false;">Chat With Support</a><img class="branded-chat-avatar" src="/hr-chat.jpgx" height="60" width="60" />' ).
+				prependTo( 'td.cms_header_text' );
 
 			// setting up horizontal block menus
 			$j( '.main-content .cms_menu_section_blocks' ).each( function( i, el ) {

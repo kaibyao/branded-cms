@@ -5,6 +5,13 @@ table, input, select, button, input.text, textarea, input.button {
 	font-family: inherit;
 }
 
+/* Disabling Heisenberg */
+@media (min-width: 550px) {
+	.container {
+		width: auto;
+	}
+}
+
 /* Iframed forms and lists */
 html[data-doctype=true] body[data-formName="ui_page_render"] { margin: 0; }
 html[data-doctype=true] div.section_header_content_no_scroll { overflow: visible; }

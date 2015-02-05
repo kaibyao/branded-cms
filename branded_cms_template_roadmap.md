@@ -74,6 +74,23 @@ Required libraries created.
 * Home Page Block Menu has submenu items removed
 * @font-face CSS code has been moved to "Bootstrap Overrides" stylesheet (will be retroactively patched into 1.x)
 
+### Deadlines
+
+#### Feb 2–5: Home Page
+* Links need to go to the proper page
+
+#### Feb 9–11: Report An Issue
+* Selection Box for different departments
+* Selecting a department will load the appropriate form
+
+#### Feb 12–13: Search For Answers
+* Dynamic Knowledge Searching
+
+#### Feb 16–25
+Service Catalog
+
+#### Feb 26-27
+My Stuff
 
 ## v2.1
 * Improved Catalog + Shopping Cart
