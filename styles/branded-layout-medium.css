@@ -2,6 +2,9 @@
 	.page-home .carousel-inner,
 	.page-home .carousel-inner > .item { height: 400px; }
 
+	.page-home .carousel-inner > .item,
+	.page-home .carousel-inner > .item > img { width: 100%; }
+
 	.page-home .carousel-caption {
 		top: 20%;
 		right: 50%;
@@ -13,8 +16,9 @@
 
 	.page-home .home-block-row { margin-top: -145px; margin-bottom: 15px; }
 	.page-home .home-block-row::after { display: table; content: ' '; }
-	.page-home .home-block-row .cms_menu_section_blocks > table { background: #fff; background: rgba( 255, 255, 255, 0.9 ); }
-	.page-home .home-block-row .cms_menu_section_blocks_title { padding-left: 10px; }
+	.page-home .home-block-row .cms_menu_section_blocks { margin: 0; background: transparent; }
+	.page-home .home-block-row .cms_menu_section_blocks > table { background: #111; background: rgba( 0, 0, 0, 0.8 ); }
+	.page-home .home-block-row .cms_menu_section_blocks_title { padding-left: 5px; }
 
 	.main-content .cms_menu_section_blocks .main-content-menu-block-items { padding-bottom: 0; }
 

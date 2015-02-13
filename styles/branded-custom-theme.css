@@ -10,7 +10,7 @@ a {
 	transition: color 200ms;
 }
 a:hover { /* When the mouse is hovering over a link */
-	color: #A61C23;
+	color: #e4252e;
 	text-decoration: none; /* removes underlines when hovering */
 }
 a:active, a:focus { /* When the mouse is in the middle of a click or just after a link has been clicked */

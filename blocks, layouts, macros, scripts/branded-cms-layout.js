@@ -1,16 +1,12 @@
 ( function() {
-	// $j.getScript( '/require.jsdbx' ).done( function() {
-	// 	//require.config( {
-	// 	//	baseUrl: "/"
-	// 	//} );
-
-	// 	require( [ '/branded-jquery.min.jsdbx', '/bootstrap.min.jsdbx', '/respond.min.jsdbx', '/branded-cms-layout.jsdbx' ], function() {
-			
-	// 	} );
-	// } );
-
 	var applyBrandedStyles = function() {
-			var $headerLogoContainer = $j( 'td.cms_header_logo' );
+			var $headerLogoContainer = $j( 'td.cms_header_logo' ),
+				chatLinks = [
+					{ sys_id : 'c54f0abf0a0a0b452db84664f409c79c', title : 'Chat with Service Desk' },
+					{ sys_id : '144b020b9b0231003fe61c760654985d', title : 'Chat with Human Resources' }
+				];
+
+			// chatLinks = [ 'CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, "c54f0abf0a0a0b452db84664f409c79c", "Chat with Service Desk"); return false;', 'CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, "144b020b9b0231003fe61c760654985d", "Chat with Human Resources"); return false;' ];
 
 			$j( 'html' ).attr( 'data-doctype', false ).data( 'doctype', false );
 
@@ -35,8 +31,18 @@
 			// Chat div
 			$j( document.createElement( 'div' ) ).
 				addClass( 'branded-chat-container' ).
-				append( '<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, \'c54f0abf0a0a0b452db84664f409c79c\', \'Chat With Support\'); return false;">Chat With Support</a><img class="branded-chat-avatar" src="/hr-chat.jpgx" height="60" width="60" />' ).
+				append( '<img class="branded-chat-avatar" src="/hr-chat.jpgx" height="60" width="60" />' ).
+				append( $j( 'div.cms_header_top_menu' ).children().filter( ':not(:empty)' ) ).
 				prependTo( 'td.cms_header_text' );
+
+			$j( '.branded-chat-link' ).each( function( i, el ) {
+				$j( el ).on( 'click', function() { CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title ); return false; } );
+			} );
+
+			// $j( document.createElement( 'div' ) ).
+			// 	addClass( 'branded-chat-container' ).
+			// 	append( '<a class="branded-chat-link" href="javascript:void(0);" onclick="CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, \'c54f0abf0a0a0b452db84664f409c79c\', \'Chat With Support\'); return false;">Chat With Support</a><img class="branded-chat-avatar" src="/hr-chat.jpgx" height="60" width="60" />' ).
+			// 	prependTo( 'td.cms_header_text' );
 
 			// setting up horizontal block menus
 			$j( '.main-content .cms_menu_section_blocks' ).each( function( i, el ) {
@@ -84,6 +90,9 @@
 			// $j( '.page-home .main-content .row' ).appendTo( '.page-home .main-content .carousel-inner' );
 
 			$j( '.branded-admin-nav' ).prependTo( 'body' ).show();
+
+			// fixing menu links disappearing after hover
+			$j( 'td.cms_header_top_menu a, .drag_section_header a, .cms_header_search a, .cms_header_search input' ).off();
 		},
 
 		hideAdminBar = function() {

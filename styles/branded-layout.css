@@ -3,13 +3,23 @@
 .page-title, .branded-admin-nav, #page_timing_div { display: none; }
 
 /* Admin Bar */
+.branded-admin-nav { z-index: 0; }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus { color: #9d9d9d; }
 
 /* Header */
 .cms_header { padding-bottom: 20px; }
 
-.cms_header_top_menu .cms_menu_super_menu_content { display: none; }
+.cms_menu_super_menu_content {
+	display: none;
+	position: absolute;
+	padding: 10px 15px;
+	text-align: left;
+	background: #fff;
+	border: 1px solid #666;
+	z-index: 1;
+}
+
 td.cms_header_top_menu { height: 40px; padding-bottom: 20px; line-height: 40px; }
 
 .cms_header span.globalSearch { display: block; padding: 5px; margin-top: 5px; line-height: 20px; border: 1px solid #ccc; }
@@ -24,6 +34,7 @@ div.cms_header_text { display: none; }
 .cms_header_bottom_menu { position: relative; padding-top: 10px; }
 .cms_header_bottom_menu .cms_menu_super_menu_bar_item,
 .cms_header_bottom_menu .cms_menu_super_menu_bar_item_selected { float: left; }
+.cms_header_bottom_menu .cms_menu_section_blocks_title h2 { margin: 0; line-height: 30px; }
 .cms_header_bottom_menu .cms_menu_super_menu_bar_item:first-child .menu_section,
 .cms_header_bottom_menu .cms_menu_super_menu_bar_item_selected:first-child .menu_section { padding-left: 0; }
 .cms_header_bottom_menu .cms_menu_super_menu_bar .menu_section {
@@ -34,37 +45,39 @@ div.cms_header_text { display: none; }
 	line-height: 1.5;
 	text-transform: uppercase;
 }
-.cms_header_bottom_menu .cms_menu_super_menu_content { display: none; }
-.cms_header_top_menu .cms_menu_super_menu_content,
-.cms_header_bottom_menu .cms_menu_super_menu_content {
-	position: absolute;
-	padding: 10px 15px;
-	text-align: left;
-	background: #fff;
-	border: 1px solid #666;
-	z-index: 1;
-}
+
 .cms_header_bottom_menu .cms_menu_section_blocks_title h2,
-.branded-chat-link {
-	margin: 0;
+.branded-chat-container {
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.1em;
-	line-height: 1.5;
 	text-transform: uppercase;
 	vertical-align: middle;
 }
-.branded-chat-container { float: right; }
-.branded-chat-link { margin-right: 10px; }
-.branded-chat-avatar { border-radius: 50%; }
-
-.cms_header_top_menu .cms_menu_section_blocks_title h2 { display: none; }
-.cms_header_top_menu .cms_menu_super_menu_content { min-width: 300px; }
+.branded-chat-container { float: right; min-width: 280px; line-height: 60px; }
+.branded-chat-avatar { float:right; margin-left: 10px; border-radius: 50%; }
+.branded-chat-container .cms_menu_section_blocks_title h2 { display: none; }
+.branded-chat-container .cms_menu_super_menu_content { min-width: 300px; }
+.branded-chat-container > div { line-height: 60px; }
+.branded-chat-department { line-height: 30px; }
+.branded-icon-chat { margin-top: -2px; }
+.branded-chat-link { margin-left: 5px; }
 
 /* Home Page */
 .page-home .carousel { display: none; }
+.page-home .home-block-row .cms_menu_section_blocks {
+	margin-bottom: 20px;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #111;
+}
+.page-home .home-block-row .cms_menu_section_blocks:last-child { margin-bottom: 0; }
 
 /* Home Pages */
+.main-content .cms_menu_section_blocks { display: none !important; }
+.main-content .row .cms_menu_section_blocks,
+.main-content .home-block-row .cms_menu_section_blocks { display: block !important; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_image_left { width: 90px; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 20px; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 {
@@ -97,13 +110,21 @@ div.cms_header_text { display: none; }
 
 /* Iframe pages */
 .branded-page-title {
-	margin: 0 0 20px;
+	margin: 20px 0 20px;
 	font-size: 24px;
 	letter-spacing: 0.05em;
 	line-height: 1;
 	text-transform: uppercase;
 }
-#catalog_frame, #support_frame { margin-top: 40px; }
+#catalog_frame, #support_frame { margin-top: 20px; }
+
+/* Get Help */
+.page-get_help .main-content > .row { display: none; }
+.branded-gethelp-selection-container { margin: 20px 0 10px; }
+.branded-gethelp-selection-container .btn-group { display: inline-block !important; }
+.branded-gethelp-selection-container .branded-gethelp-dropdown { width: 100%; }
+.branded-gethelp-selection-container .branded-gethelp-dropdown-button { width: 210px; padding: 10px 20px; text-align: left; }
+.branded-gethelp-selection-container .branded-gethelp-dropdown-button:hover { box-shadow: none; }
 
 /* Support Pages */
 .page-it_support .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2,
