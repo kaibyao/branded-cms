@@ -31,11 +31,9 @@
 	</div>
 </div>
 
-<g:requires name="jquery-1.11.1.min.jsdbx" />
-<g:requires name="bootstrap-3.3.1.min.jsdbx" />
-<g:requires name="respond.min.jsdbx" />
-<g:requires name="branded-cms-layout.jsdbx" />
-
 <g:call function="branded_cms_admin_nav" />
+
+<g:requires name="branded-jquery.min.jsdbx" />
+<g:requires name="branded-cms-init.jsdbx" />
 
 </j:jelly>

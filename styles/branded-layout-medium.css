@@ -2,5 +2,8 @@
 	.page-home .carousel-inner,
 	.page-home .carousel-inner > .item { height: 330px; }
 
+	.page-home .carousel-inner > .item,
+	.page-home .carousel-inner > .item > img { width: 100%; }
+
 	.main-content .cms_menu_section_blocks .main-content-menu-block-items { padding-bottom: 0; }
 }
