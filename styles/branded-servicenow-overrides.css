@@ -14,6 +14,15 @@ div.form_title { font-size: 14px; }
 
 .breadcrumb { padding: 0; background: transparent; }
 
+/* Attachments (live feed) */
+#attachment { background: #fff; }
+#attachment .drag_section_movearea { padding: 10px 20px; }
+#attachment .caption { padding: 10px 20px; background: #fff; color: #333; }
+#attachment .attachmentRow td { padding-right: 20px; }
+#attachment #attachFileCell { padding-left: 20px; }
+#attachmentTable tr:not(.attachmentRow) input.button { margin-top: 10px; margin-left: 20px; }
+#attachment_dialog_list { padding-left: 20px; padding-right: 20px; }
+
 /* Service Catalog */
 #category_description, #navigatordetailTop { display: none; }
 

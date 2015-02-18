@@ -28,11 +28,6 @@ jQuery.noConflict();
 			$j( 'td.cms_header_text' ).first().addClass( 'branded-main-menu-container col-xs-6 col-md-10' );
 			$j( '.cms_header_bottom_menu' ).children().appendTo( '.branded-main-menu-container' );
 
-			// Chat links
-			$j( '.branded-chat-link' ).each( function( i, el ) {
-				$j( el ).on( 'click', function() { CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title ); return false; } );
-			} );
-
 			// setting up horizontal block menus
 			$j( '.main-content .cms_menu_section_blocks' ).each( function( i, el ) {
 				var $menuBlock = $j( el ),
@@ -74,11 +69,17 @@ jQuery.noConflict();
 			} );
 
 			$j( '.main-content .cms_menu_section_blocks > table > tbody > tr:nth-child(2) > td' ).addClass( 'main-content-menu-block-items' );
+			$j( '.main-content .cms_menu_section_blocks' ).show();
 
 			$j( '.branded-admin-nav' ).prependTo( 'body' ).show();
 
 			// fixing menu links disappearing after hover
 			$j( 'td.cms_header_top_menu a, .drag_section_header a, .cms_header_search a, .cms_header_search input' ).off();
+
+			// Chat links
+			$j( '.branded-chat-link' ).each( function( i, el ) {
+				$j( el ).on( 'click', function() { CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title ); return false; } );
+			} );
 		},
 
 		hideAdminBar = function() {

@@ -21,11 +21,5 @@ td.row > div[class*="col-"]:last-child {
 	padding-right: 0;
 }
 
-/* I can't seem to include ttf or svg files into Share, so these will have to be commented out for now */
-@font-face {
-	font-family: 'Glyphicons Halflings';
-
-	src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot');
-	src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.woff') format('woff');
-	/*src: url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.woff') format('woff'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.ttf') format('truetype'), url('/download_file.do?sysparm_parent=uploads&sysparm_child=glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');*/
-}
+/* Buttons */
+button { color: #fff; }

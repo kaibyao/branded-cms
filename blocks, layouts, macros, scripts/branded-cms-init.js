@@ -2,24 +2,30 @@
 var jquery;
 
 ( function( $j ) {
-	$j.getScript( '/require.jsdbx' ).done( function() {
-		requirejs.config( {
-			deps : [ 'jquery', 'bootstrap', /*'respond',*/ 'brandedlayout' ],
+	var requireConfig = {
+			deps : [ 'bootstrap', 'brandedlayout' ],
 
 			paths : {
-				'jquery' : '/branded-jquery.min.jsdbx?dummy_ext=',
 				'bootstrap' : '/bootstrap.min.jsdbx?dummy_ext=',
 				'brandedlayout' : '/branded-cms-layout.jsdbx?dummy_ext='
-			},
-
-			shim : {
-				'bootstrap' : { 'deps' : [ 'jquery' ] },
-				'brandedlayout' : { 'deps' : [ 'jquery' ] }
-			},
-
-			callback : function() {
-				jquery = jQuery.noConflict();
 			}
-		} );
+		};
+
+	if ( jQuery.fn.jquery === '1.11.1' ) {
+		jquery = jQuery.noConflict();
+	} else {
+		requireConfig.deps.unshift( 'jquery' );
+		requireConfig.paths.jquery = '/branded-jquery.min.jsdbx?dummy_ext=';
+		requireConfig.shim = {
+			'bootstrap' : { 'deps' : [ 'jquery' ] },
+			'brandedlayout' : { 'deps' : [ 'jquery' ] }
+		};
+		requireConfig.callback = function() {
+			jquery = jQuery.noConflict();
+		};
+	}
+
+	$j.getScript( '/require.jsdbx' ).done( function() {
+		requirejs.config( requireConfig );
 	} );
 } )( jQuery );
