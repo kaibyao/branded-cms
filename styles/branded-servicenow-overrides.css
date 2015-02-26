@@ -6,6 +6,8 @@ table, input, select, button, input.text, textarea, input.button {
 }
 
 /* Disabling Heisenberg */
+.modal-backdrop { z-index: 0; }
+
 @media (min-width: 550px) {
 	.container {
 		width: auto;
@@ -48,3 +50,6 @@ div.form_title { font-size: 14px; }
 
 /* Live Feed */
 .main-content .live_feed_column { padding: 0; }
+
+/* Bootstrap Buttons */
+.btn-default:hover, .btn-destructive-subdued:hover, .btn-success-subdued:hover, .nav-segmented > li:hover, .btn-default.hover, .hover.btn-destructive-subdued, .hover.btn-success-subdued, .nav-segmented > li.hover { box-shadow: none; }

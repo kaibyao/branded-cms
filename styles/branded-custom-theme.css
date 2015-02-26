@@ -6,15 +6,15 @@ For a nice way to experiment with colors, see https://color.adobe.com/create/col
 
 /* General Link Styles */
 a {
-	color: #D1232B;
+	color: #337AB7;
 	transition: color 200ms;
 }
 a:hover { /* When the mouse is hovering over a link */
-	color: #e4252e;
+	color: #278EFC;
 	text-decoration: none; /* removes underlines when hovering */
 }
 a:active, a:focus { /* When the mouse is in the middle of a click or just after a link has been clicked */
-	color: #A61C23;
+	color: #337AB7;
 	text-decoration: underline;
 }
 
@@ -22,5 +22,5 @@ a:active, a:focus { /* When the mouse is in the middle of a click or just after 
 	color: #777;
 }
 .cms_header_bottom_menu a:hover {
-	color: #D1232B;
+	color: #337AB7;
 }

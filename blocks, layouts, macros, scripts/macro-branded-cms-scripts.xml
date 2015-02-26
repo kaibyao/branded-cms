@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 
-<g:requires name="require.jsdbx" />
-<g:requires name="branded-cms-layout.jsdbx" />
-<!-- will comment these others out, because the branded-cms-layout script will use requireJS to load the rest -->
-<g:requires name="branded-jquery.min.jsdbx" />
-<g:requires name="bootstrap.min.jsdbx" />
-<g:requires name="respond.min.jsdbx" />
+<g:requires name="branded-jquery.min.jsdbx?dummy_ext=" />
+<g:requires name="branded-cms-init.jsdbx" />
 
 </j:jelly>
