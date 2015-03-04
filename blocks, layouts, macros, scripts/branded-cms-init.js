@@ -16,7 +16,8 @@ var jquery;
 				'brandedtypeaheadbundle' : '/branded-typeahead.bundle.jsdbx?dummy_ext=',
 				'brandedtypeaheadsetup' : '/branded-typeahead-setup.jsdbx?dummy_ext=',
 				'brandedknowledgesearch' : '/branded-knowledge-search.jsdbx?dummy_ext=',
-				'brandedknowledgearticle' : '/branded-knowledge-article.jsdbx?dummy_ext='
+				'brandedknowledgearticle' : '/branded-knowledge-article.jsdbx?dummy_ext=',
+				'brandedcatalog' : '/branded-catalog.jsdbx?dummy_ext='
 			},
 
 			shim : {
@@ -33,11 +34,14 @@ var jquery;
 		var pathJsMap = {
 				'/branded/get_help.do' : 'brandedgethelp',
 				'/branded/knowledge_search.do' : 'brandedknowledgesearch',
-				'/branded/knowledge.do' : 'brandedknowledgearticle'
+				'/branded/knowledge.do' : 'brandedknowledgearticle',
+				'/branded/service_catalog.do' : 'brandedcatalog'
 			};
 
 		requirejs.config( requireConfig );
 
-		requirejs( [ pathJsMap[ window.location.pathname ] ], function() {} );
+		if ( pathJsMap[ window.location.pathname ] ) {
+			requirejs( [ pathJsMap[ window.location.pathname ] ], function() {} );
+		}
 	} );
 } )( jQuery );

@@ -6,32 +6,32 @@
 	<input type="submit" id="typeahead-search-submit" class="typeahead-search-submit" value="submit" />
 </form><!-- /input-group -->
 
-<div class="branded-knowledge-container row">
+<div class="branded-knowledge-container branded-main-container row">
 	<div class="branded-knowledge-filters col-md-3">
 		<div class="branded-knowledge-knowledgebase-filters">
-			<h3 class="branded-knowledge-knowledgebase-filters-title branded-knowledge-filters-title">Knowledge Bases</h3>
+			<h3 class="branded-knowledge-knowledgebase-filters-title branded-section-title">Knowledge Bases</h3>
 			<ul class="js-branded-knowledge-knowledgebase-filters-list branded-knowledge-filters-list">
 			</ul>
 		</div>
 
 		<div class="branded-knowledge-topic-filters">
-			<h3 class="branded-knowledge-topic-filters-title branded-knowledge-filters-title">Topics</h3>
+			<h3 class="branded-knowledge-topic-filters-title branded-section-title">Topics</h3>
 			<ul class="js-branded-knowledge-topic-filters-list branded-knowledge-filters-list">
 			</ul>
 		</div>
 	</div>
 
 	<div class="branded-knowledge-main col-md-6">
-		<h3 class="branded-knowledge-main-title branded-knowledge-filters-title">Articles</h3>
+		<h3 class="branded-knowledge-main-title branded-section-title">Articles</h3>
 	</div>
 
 	<div class="branded-knowledge-feed col-md-3">
 		<div class="branded-knowledge-featured">
-			<h3 class="branded-knowledge-featured-title branded-knowledge-feed-title">Featured Articles</h3>
+			<h3 class="branded-knowledge-featured-title branded-section-title">Featured Articles</h3>
 			<ul class="branded-knowledge-featured-list branded-knowledge-feed-list"></ul>
 		</div>
 		<div class="branded-knowledge-helpful">
-			<h3 class="branded-knowledge-helpful-title branded-knowledge-feed-title">Helpful Articles</h3>
+			<h3 class="branded-knowledge-helpful-title branded-section-title">Helpful Articles</h3>
 			<ul class="branded-knowledge-helpful-list branded-knowledge-feed-list"></ul>
 		</div>
 	</div>

@@ -65,6 +65,7 @@ div.cms_header_text { display: none; }
 
 /* Home Page */
 .page-home .carousel { display: none; }
+.page-home .home-block-row a { color: #fff; }
 .page-home .home-block-row .cms_menu_section_blocks {
 	margin-bottom: 20px;
 	color: #fff;
@@ -184,10 +185,16 @@ div.cms_header_text { display: none; }
 .page-hr_support .main-content .cms_menu_section_blocks .cms_menu_section_blocks_image_left,
 .page-facilities_support .main-content .cms_menu_section_blocks .cms_menu_section_blocks_image_left { width: 60px; }
 
+/* knowledge/catalog */
+.branded-main-container { padding-top: 40px; }
+.branded-section-title {
+	margin: 0;
+	font-size: 18px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
 
 /* knowledge search styles */
-.branded-knowledge-container { padding-top: 40px; }
-
 .branded-knowledge-filters-title,
 .branded-knowledge-feed-title {
 	margin: 0;
@@ -258,8 +265,45 @@ div.cms_header_text { display: none; }
 	line-height: 1.5;
 }
 
+/* Catalog Home styles */
+.branded-catalog-container { padding-top: 20px; }
 
-/* START: DELETE THIS */
+.branded-catalog-main { padding-top: 20px; }
+.branded-catalog-main-list,
+.branded-catalog-secondary-list { list-style-type: none; padding: 0; }
+
+.branded-requested-title,
+.branded-related-title,
+.branded-mostrequested-title { margin-bottom: 20px; text-transform: none; }
+
+.branded-main-item-link,
+.branded-secondary-item-link { display: block; }
+.branded-main-item { margin-bottom: 30px; }
+.branded-main-item-link {
+	height: 170px;
+	padding: 30px 10px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.branded-main-item-image { min-width: 50px; max-width: 100%; }
+.branded-main-item-title {
+	overflow: hidden;
+	padding-top: 10px;
+	max-height: 70px;
+}
+
+.branded-catalog-modal .modal-dialog { width: 900px; }
+.branded-catalog-modal .modal-body { min-height: 700px; }
+.branded-catalog-modal .branded-catalog-modal-iframe { min-height: 660px; }
+
+/*.branded-mostrequested { padding: 20px; background-color: #f1f2f3; }
+.branded-secondary-item { margin-top: 10px; padding-bottom: 10px; }
+.branded-secondary-item-link {
+	height: 100px;
+	background: #ccc;
+	border: 1px solid #999;
+}*/
+
 .kb-list-article { margin-bottom: 20px; }
 .kb-list-article-views,
 .kb-list-article-votes { text-align: center; }
@@ -283,8 +327,6 @@ div.cms_header_text { display: none; }
 }
 .kb-list-article-meta { color: #999; font-size: 12px; }
 .kb-list-article-author-name { font-weight: bold; }
-/* END: DELETE THIS */
-
 
 /* Footer */
 .branded-footer {

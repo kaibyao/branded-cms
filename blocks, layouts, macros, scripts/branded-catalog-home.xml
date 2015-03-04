@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var catalogItems = new GlideRecord( 'sc_cat_item' ),
+		catalogItemImages = [];
+	catalogItems.query();
+
+	while ( catalogItems.next() ) {
+		catalogItemImages.push( { sys_id : catalogItems.sys_id.getDisplayValue(), image : catalogItems.image.getDisplayValue(), icon : catalogItems.icon.getDisplayValue() } );
+	}
+</g:evaluate>
+<script>
+	var catalogItemImages = {};
+	<j:forEach items="${catalogItemImages}" var="jvar_item">
+		<g:evaluate jelly="true">
+			var sysId = jelly.jvar_item.sys_id,
+				image = jelly.jvar_item.image,
+				icon = jelly.jvar_item.icon;
+		</g:evaluate>
+		catalogItemImages[ '${sysId}' ] = { image : '${image}', icon : '${icon}' };
+	</j:forEach>
+</script>
+
+<form class="typeahead-search input-group">
+	<input type="text" id="typeahead-search-text" class="typeahead-search-text form-control" value="" placeholder="Search for services or items here" />
+	<input type="submit" id="typeahead-search-submit" class="typeahead-search-submit" value="submit" />
+</form><!-- /input-group -->
+
+<div class="branded-catalog-container branded-main-container row">
+	<div class="branded-catalog-main col-sm-12">
+		<div class="branded-requested-items">
+			<h3 class="branded-requested-title branded-section-title">Services You've Requested</h3>
+			<ul class="branded-requested-items-list branded-catalog-main-list row"></ul>
+		</div>
+
+		<div class="branded-related-items">
+			<h3 class="branded-related-title branded-section-title">Related Services</h3>
+			<ul class="branded-related-items-list branded-catalog-main-list row"></ul>
+		</div>
+	</div>
+	<!--<div class="branded-catalog-secondary col-sm-4">
+		<div class="branded-mostrequested">
+			<h3 class="branded-mostrequested-title branded-section-title">Most Requested</h3>
+			<ul class="branded-mostrequested-items-list branded-catalog-secondary-list">
+				<li class="branded-secondary-item">
+					<a class="branded-secondary-item-link"></a>
+				</li>
+				<li class="branded-secondary-item">
+					<a class="branded-secondary-item-link"></a>
+				</li>
+				<li class="branded-secondary-item">
+					<a class="branded-secondary-item-link"></a>
+				</li>
+			</ul>
+		</div>
+	</div>-->
+</div>
+
+<div class="branded-catalog-modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">${AMP}times;</span></button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body"></div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</j:jelly>
