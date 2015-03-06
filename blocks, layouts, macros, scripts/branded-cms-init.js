@@ -15,8 +15,9 @@ var jquery;
 				'brandedgethelp' : '/branded-get-help.jsdbx?dummy_ext=',
 				'brandedtypeaheadbundle' : '/branded-typeahead.bundle.jsdbx?dummy_ext=',
 				'brandedtypeaheadsetup' : '/branded-typeahead-setup.jsdbx?dummy_ext=',
-				'brandedknowledgesearch' : '/branded-knowledge-search.jsdbx?dummy_ext=',
-				'brandedknowledgearticle' : '/branded-knowledge-article.jsdbx?dummy_ext=',
+				// 'brandedknowledgesearch' : '/branded-knowledge-search.jsdbx?dummy_ext=',
+				// 'brandedknowledgearticle' : '/branded-knowledge-article.jsdbx?dummy_ext=',
+				'brandedknowledgebase' : '/branded-knowledgebase.jsdbx?dummy_ext=',
 				'brandedcatalog' : '/branded-catalog.jsdbx?dummy_ext='
 			},
 
@@ -33,8 +34,9 @@ var jquery;
 	$j.getScript( '/require.jsdbx' ).done( function() {
 		var pathJsMap = {
 				'/branded/get_help.do' : 'brandedgethelp',
-				'/branded/knowledge_search.do' : 'brandedknowledgesearch',
-				'/branded/knowledge.do' : 'brandedknowledgearticle',
+				// '/branded/knowledge_search.do' : 'brandedknowledgesearch',
+				// '/branded/knowledge.do' : 'brandedknowledgearticle',
+				'/branded/knowledgebase.do' : 'brandedknowledgebase',
 				'/branded/service_catalog.do' : 'brandedcatalog'
 			};
 

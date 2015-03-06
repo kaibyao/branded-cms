@@ -3,7 +3,7 @@
 			var $headerLogoContainer = $j( 'td.cms_header_logo' ),
 				chatLinks = [
 					{ sys_id : 'c54f0abf0a0a0b452db84664f409c79c', title : 'Chat with Service Desk' },
-					{ sys_id : '144b020b9b0231003fe61c760654985d', title : 'Chat with Human Resources' }
+					{ sys_id : '4a936a590f2121002b58f25be1050e8a', title : 'Chat with Human Resources' }
 				];
 
 			$j( 'html' ).attr( 'data-doctype', false ).data( 'doctype', false );

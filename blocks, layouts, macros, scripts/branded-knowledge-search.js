@@ -1,3 +1,5 @@
+// Old, don't use this. This was a failed experiment.
+
 'use strict';
 define( [ 'jquery', 'bootstrap', 'brandedtypeaheadbundle', 'brandedtypeaheadsetup', 'underscore', 'backbone' ], function( $j, bootstrap, taBundle, taSetup, _, Backbone ) {
 	var searchViewCore = {

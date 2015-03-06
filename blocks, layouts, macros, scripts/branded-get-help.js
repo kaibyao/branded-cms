@@ -1,60 +1,66 @@
-'use strict';
 define( [ 'jquery', 'underscore', 'backbone' ], function( $j, _, Backbone ) {
-	var menuIndexMap = {
-			'it'         : 0,
-			'facilities' : 1,
-			'hr'         : 2
-		};
+'use strict';
 
-	var selectViewCore = {
-			el : '.branded-gethelp-dropdown',
+var menuIndexMap = {
+		'it'         : 0,
+		'facilities' : 1,
+		'finance'    : 2,
+		'hr'         : 3,
+		'legal'      : 4,
+		'marketing'  : 5
+	};
 
-			events : {
-				'click .branded-gethelp-dropdown-link' : 'loadDepartment'
-			},
+var selectViewCore = {
+		el : '.branded-gethelp-dropdown',
 
-			firstLoadDepartment : function() {
-				// for when the page loads and we load the initial page config
+		events : {
+			'click .branded-gethelp-dropdown-link' : 'loadDepartment'
+		},
 
-				var $menus = $j( '.page-get_help .main-content > .row' ),
-					$iframe = $j( '#support_frame' ),
-					$departmentMenu = $j( $menus[ menuIndexMap[ 'it' ] ] );
+		firstLoadDepartment : function() {
+			// for when the page loads and we load the initial page config
 
-				$menus.hide();
-				$departmentMenu.show();
-
-				$iframe[ 0 ].src = $departmentMenu.find( 'a' ).first().attr( 'href' );
-			},
-
-			loadDepartment : function( ev ) {
-				var $menus = $j( '.page-get_help .main-content > .row' ),
-					$dropdownButton = this.$el.parent().find( '.branded-gethelp-dropdown-button' ),
-					$dropdownButtonText = this.$el.parent().find( '.branded-gethelp-dropdown-button-text' ),
-					$iframe = $j( '#support_frame' ),
-					$target = this.$el.find( ev.currentTarget ),
-					department = $target.data( 'department' ),
-					$departmentMenu;
-
-				// Do nothing if the user selects the same department as the active department
-				$dropdownButtonText.empty().append( $target.html() );
-
-				if ( $dropdownButton.data( 'active' ) === $target.data( 'department' ) ) {
-					return;
-				}
-
-				$dropdownButton.data( 'active', $target.data( 'department' ) );
+			var $menus = $j( '.page-get_help .main-content > .row' ),
+				$iframe = $j( '#support_frame' ),
+				department = ( typeof brandedGethelpDepartment !== 'undefined' ) ? brandedGethelpDepartment : 'it', // determined in the gethelp-select dynamic block
 				$departmentMenu = $j( $menus[ menuIndexMap[ department ] ] );
 
-				$menus.hide();
-				$departmentMenu.show();
+			$menus.hide();
+			$departmentMenu.show();
 
-				$iframe[ 0 ].src = $departmentMenu.find( 'a' ).first().attr( 'href' );
+			$iframe[ 0 ].src = $departmentMenu.find( 'a' ).first().attr( 'href' );
+		},
+
+		loadDepartment : function( ev ) {
+			var $menus = $j( '.page-get_help .main-content > .row' ),
+				$dropdownButton = this.$el.parent().find( '.branded-gethelp-dropdown-button' ),
+				$dropdownButtonText = this.$el.parent().find( '.branded-gethelp-dropdown-button-text' ),
+				$iframe = $j( '#support_frame' ),
+				$target = this.$el.find( ev.currentTarget ),
+				department = $target.data( 'department' ),
+				$departmentMenu;
+
+			// Do nothing if the user selects the same department as the active department
+			$dropdownButtonText.empty().append( $target.html() );
+
+			if ( $dropdownButton.data( 'active' ) === $target.data( 'department' ) ) {
+				return;
 			}
-		};
 
-	var selectView = new ( Backbone.View.extend( selectViewCore ) )();
+			$dropdownButton.data( 'active', $target.data( 'department' ) );
+			$departmentMenu = $j( $menus[ menuIndexMap[ department ] ] );
 
-	$j( document ).ready( function() {
-		selectView.firstLoadDepartment();
-	} );
+			$menus.hide();
+			$departmentMenu.show();
+
+			$iframe[ 0 ].src = $departmentMenu.find( 'a' ).first().attr( 'href' );
+		}
+	};
+
+var selectView = new ( Backbone.View.extend( selectViewCore ) )();
+
+$j( document ).ready( function() {
+	selectView.firstLoadDepartment();
+} );
+
 } );

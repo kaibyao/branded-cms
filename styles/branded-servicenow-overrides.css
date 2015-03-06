@@ -1,4 +1,5 @@
 /* Overriding default CMS/Iframed styles */
+body { height: auto; margin: 0; }
 
 table, input, select, button, input.text, textarea, input.button {
 	font-size: inherit;
@@ -17,6 +18,8 @@ table, input, select, button, input.text, textarea, input.button {
 /* Iframed forms and lists */
 html[data-doctype=true] body[data-formName="ui_page_render"] { margin: 0; }
 html[data-doctype=true] div.section_header_content_no_scroll { overflow: visible; }
+html[data-doctype=true] .list_nav.list_nav_top { background: transparent; }
+tr.io_label td { background: transparent !important; }
 div.form_title { font-size: 14px; }
 .label { display: block; font-size: inherit; line-height: inherit; }
 .label label { margin-bottom: 0; }
@@ -24,7 +27,7 @@ div.form_title { font-size: 14px; }
 .breadcrumb { padding: 0; background: transparent; }
 
 /* Service Catalog */
-#category_description, #navigatordetailTop { display: none; }
+#category_description, #navigatordetailTop, #back_cell, .header_bar_title { display: none !important; }
 
 .sc_category_item .details_div td,
 .sc_category_item_hover .details_div td,
@@ -32,12 +35,14 @@ div.form_title { font-size: 14px; }
 .sc_category_item .details_div h3:first-child,
 .sc_category_item_hover .details_div h3:first-child,
 .catalog_description > table > tbody > tr > td > h3:first-child { margin-top: 0; }
+html[data-doctype=true] tr.header { background: transparent; }
+html[data-doctype=true] div.sc_category_item, html[data-doctype=true] div.sc_category_item_hover { padding: 20px 0 !important; }
+html[data-doctype=true] .sc_category_item_left { padding-right: 20px; }
 
 /* Catalog Shopping Cart Container */
 #cartContent { padding: 10px; border: 1px solid #ccc; }
 .sc_cat_set_window, .sc_cart_window { margin: 0; border: 0 none; }
 .sc_cart_window { min-width: 175px; width: 100% !important; }
-
 
 /* Catalog Shopping Cart Top */
 #cartContent_header { padding-bottom: 10px; }
@@ -50,6 +55,12 @@ div.form_title { font-size: 14px; }
 
 /* Live Feed */
 .main-content .live_feed_column { padding: 0; }
+
+/* Knowledge */
+.row.search-bar { background: transparent; border-bottom: 0 none; }
+.row.search-bar form { padding-left: 0; }
+.row.search-bar .buttons { padding-right: 0; }
+.row.homepage { margin: 60px -15px 0; }
 
 /* Bootstrap Buttons */
 .btn-default:hover, .btn-destructive-subdued:hover, .btn-success-subdued:hover, .nav-segmented > li:hover, .btn-default.hover, .hover.btn-destructive-subdued, .hover.btn-success-subdued, .nav-segmented > li.hover { box-shadow: none; }

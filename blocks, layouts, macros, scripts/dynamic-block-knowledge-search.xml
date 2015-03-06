@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 
+<!-- failed experiment. do not use -->
 <form class="typeahead-search input-group">
 	<input type="text" id="typeahead-search-text" class="typeahead-search-text form-control" value="" placeholder="Search for an article" />
 	<input type="submit" id="typeahead-search-submit" class="typeahead-search-submit" value="submit" />

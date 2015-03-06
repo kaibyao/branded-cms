@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var kbSysId = RP.getParameterValue( 'kb' ),
+		iframe = new GlideRecord( 'content_block_iframe' ),
+	url = '$knowledge.do#/search?kb=';
+
+	if ( !!kbSysId ) {
+		url += kbSysId;
+	}
+
+	gr.initialize();
+	gr.frame_name = 'knowledge_frame';
+	gr.url = url;
+	gr.sizing = 'expand';
+	gr.putCurrent();
+</g:evaluate>
+<g:render_content_block_iframe />
+<g:evaluate>
+	gr.popCurrent();
+</g:evaluate>
+
+</j:jelly>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<!-- This is a failed experiment. Don't use -->
+<g:evaluate jelly="true">
+	var catalogItems = new GlideRecord( 'sc_cat_item' ),
+		catalogItemImages = [];
+	catalogItems.query();
+
+	while ( catalogItems.next() ) {
+		catalogItemImages.push( { sys_id : catalogItems.sys_id.getDisplayValue(), image : catalogItems.image.getDisplayValue(), icon : catalogItems.icon.getDisplayValue() } );
+	}
+</g:evaluate>
+<script>
+	var catalogItemImages = {};
+	<j:forEach items="${catalogItemImages}" var="jvar_item">
+		<g:evaluate jelly="true">
+			var sysId = jelly.jvar_item.sys_id,
+				image = jelly.jvar_item.image,
+				icon = jelly.jvar_item.icon;
+		</g:evaluate>
+		catalogItemImages[ '${sysId}' ] = { image : '${image}', icon : '${icon}' };
+	</j:forEach>
+</script>
+
+<form class="typeahead-search input-group">
+	<div class="input-group-btn">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			All Departments <span class="caret"></span>
+		</button>
+		<ul class="branded-catalog-dropdown-menu dropdown-menu" role="menu">
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);">All Departments</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="facilities">Facilities</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="finance">Finance</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="hr">Human Resources</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="it">IT</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="legal">Legal</a></li>
+			<li class="branded-catalog-dropdown-menu-item"><a class="branded-catalog-dropdown-menu-item-link" href="javascript:void(0);" data-department="marketing">Marketing</a></li>
+		</ul>
+	</div><!-- /btn-group -->
+	<input type="text" id="typeahead-search-text" class="typeahead-search-text form-control" value="" placeholder="Search for services or items here" />
+	<input type="submit" id="typeahead-search-submit" class="typeahead-search-submit" value="submit" />
+</form><!-- /input-group -->
+
+</j:jelly>
