@@ -26,5 +26,5 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	.page-home .carousel-caption .hidden-sm.hidden-xs { display: none; }
+	.page-home .carousel-caption p { display: none; }
 }
