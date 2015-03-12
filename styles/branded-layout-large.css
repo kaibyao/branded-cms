@@ -1,6 +1,9 @@
 @media ( min-width: 1200px ) {
 	.page-home .carousel-inner,
-	.page-home .carousel-inner > .item { height: 450px; }
+	.page-home .carousel-inner > .item { height: 300px; }
+
+	.page-home .carousel-caption { padding: 20px 40px; }
+	.page-home .carousel-caption h3 { font-size: 22px; }
 
 	.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 { font-size: 20px; }
 	.main-content .cms_menu_section_blocks .cms_menu_second_level_text { font-size: 14px; }

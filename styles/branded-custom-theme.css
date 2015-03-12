@@ -24,3 +24,18 @@ a:active, a:focus { /* When the mouse is in the middle of a click or just after 
 .cms_header_bottom_menu a:hover {
 	color: #337AB7;
 }
+
+/* Home Page: Branded HR Profile Block */
+.branded-hr-profile {
+	color: #fafbfc;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #002C4D;
+}
+.branded-hr-profile a { color: #fafbfc; font-weight: bold; text-decoration: underline; transition: text-shadow 300ms; }
+.branded-hr-profile a:hover { color: #fff; text-shadow: 0 0 10px rgba( 255, 255, 255, 0.8 ); }
+.branded-hr-profile-department { color: #f1f2f3; }
+
+/* Home Page: Secondary Blocks */
+.branded-secondary-recent-updates { background: #dbe9f6; }
+.branded-secondary-upcoming-events { background: #f5f6f7; }

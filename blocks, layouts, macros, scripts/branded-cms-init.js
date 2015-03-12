@@ -15,8 +15,6 @@ var jquery;
 				'brandedgethelp' : '/branded-get-help.jsdbx?dummy_ext=',
 				'brandedtypeaheadbundle' : '/branded-typeahead.bundle.jsdbx?dummy_ext=',
 				'brandedtypeaheadsetup' : '/branded-typeahead-setup.jsdbx?dummy_ext=',
-				// 'brandedknowledgesearch' : '/branded-knowledge-search.jsdbx?dummy_ext=',
-				// 'brandedknowledgearticle' : '/branded-knowledge-article.jsdbx?dummy_ext=',
 				'brandedknowledgebase' : '/branded-knowledgebase.jsdbx?dummy_ext=',
 				'brandedcatalog' : '/branded-catalog.jsdbx?dummy_ext='
 			},
@@ -32,18 +30,20 @@ var jquery;
 		};
 
 	$j.getScript( '/require.jsdbx' ).done( function() {
-		var pathJsMap = {
-				'/branded/get_help.do' : 'brandedgethelp',
-				// '/branded/knowledge_search.do' : 'brandedknowledgesearch',
-				// '/branded/knowledge.do' : 'brandedknowledgearticle',
-				'/branded/knowledgebase.do' : 'brandedknowledgebase',
-				'/branded/service_catalog.do' : 'brandedcatalog'
-			};
+		var pathJsMap = [
+				{ path : 'get_help.do', require : 'brandedgethelp' },
+				{ path : 'knowledgebase.do', require : 'brandedknowledgebase' },
+				{ path : 'service_catalog.do', require : 'brandedcatalog' }
+			],
+			i;
 
 		requirejs.config( requireConfig );
 
-		if ( pathJsMap[ window.location.pathname ] ) {
-			requirejs( [ pathJsMap[ window.location.pathname ] ], function() {} );
+		for ( i = 0; i < pathJsMap.length; i++ ) {
+			if ( window.location.pathname.indexOf( pathJsMap[ i ].path ) !== -1 ) {
+				requirejs( [ pathJsMap[ i ].require ], function() {} );
+				i = pathJsMap.length;
+			}
 		}
 	} );
 } )( jQuery );

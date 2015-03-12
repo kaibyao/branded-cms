@@ -39,7 +39,7 @@ div.cms_header_text { display: none; }
 .cms_header_bottom_menu .cms_menu_super_menu_bar_item_selected:first-child .menu_section { padding-left: 0; }
 .cms_header_bottom_menu .cms_menu_super_menu_bar .menu_section {
 	display: block;
-	padding: 0 15px;
+	padding: 0 30px;
 	font-size: 20px;
 	letter-spacing: 0.1em;
 	line-height: 1.5;
@@ -48,39 +48,47 @@ div.cms_header_text { display: none; }
 
 .cms_header_bottom_menu .cms_menu_section_blocks_title h2,
 .branded-chat-container {
+	float: right;
+	min-width: 280px;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.1em;
+	line-height: 60px;
 	text-transform: uppercase;
 	vertical-align: middle;
 }
-.branded-chat-container { float: right; min-width: 280px; line-height: 60px; }
-.branded-chat-avatar { float:right; margin-left: 10px; border-radius: 50%; }
-.branded-chat-container .cms_menu_section_blocks_title h2 { display: none; }
-.branded-chat-container .cms_menu_super_menu_content { min-width: 300px; }
+.branded-chat-container .cms_menu_super_menu_bar { text-align: right; }
 .branded-chat-container > div { line-height: 60px; }
-.branded-chat-department { line-height: 30px; }
-.branded-icon-chat { margin-top: -2px; }
-.branded-chat-link { margin-left: 5px; }
+.branded-chat-avatar { float:right; margin-left: 10px; border-radius: 50%; }
+.branded-chat-container a { color: #777; }
 
-/* Home Page */
-.page-home .carousel { display: none; }
-.page-home .home-block-row a { color: #fff; }
-.page-home .home-block-row .cms_menu_section_blocks {
-	margin-bottom: 20px;
-	color: #fff;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: #111;
-}
-.page-home .home-block-row .cms_menu_section_blocks:last-child { margin-bottom: 0; }
+/* Home Page: HR Profile Block */
+.branded-hr-profile { padding: 40px; }
+.branded-hr-profile-user-name { margin: 0; }
+.branded-hr-profile-user-title { margin: 5px 0 0; }
+.branded-hr-profile-user-department { margin: 10px 0 0; }
+.branded-hr-profile-text { margin: 20px 0 0; }
+
+/* Home Page: HR Simple Knowledge List */
+.secondary-content .branded-secondary-block { padding: 40px; }
+.secondary-content .branded-secondary-block-title { margin: 0; }
+.secondary-content .branded-secondary-block-list { margin: 0; padding: 0; list-style-type: none; }
+.secondary-content .branded-secondary-block-list-item { margin-top: 20px; }
+.secondary-content .branded-secondary-block-list-item-link-shortdescription,
+.secondary-content .branded-secondary-block-list-item-link-description,
+.secondary-content .branded-secondary-block-list-item-link-published { display: block; }
+.secondary-content .branded-secondary-block-list-item-link-shortdescription { font-size: 1.2em; }
+.secondary-content .branded-secondary-block-list-item-link-description { margin-bottom: 3px; color: #777; font-style: italic; }
+.secondary-content .branded-secondary-block-list-item-link-published { font-size: 0.8em; }
+.secondary-content .branded-secondary-block-list-item-link-published,
+.secondary-content .branded-secondary-block-list-item-link:hover .branded-simple-knowledge-list-item-link-published { color: #999; }
 
 /* Home Pages */
 .main-content .cms_menu_section_blocks { display: none !important; }
 .main-content .row .cms_menu_section_blocks,
 .main-content .home-block-row .cms_menu_section_blocks { display: block !important; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_image_left { width: 90px; }
-.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 20px; }
+.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title { padding-left: 10px; }
 .main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 {
 	margin: 0;
 	font-size: 18px;
@@ -109,54 +117,6 @@ div.cms_header_text { display: none; }
 	text-transform: uppercase;
 }
 
-/* Typeahead Search Bar */
-.typeahead-search { margin: 0; }
-.typeahead-search .input-group-btn { display: table-cell !important; }
-.typeahead-search .twitter-typeahead { display: table-cell !important; width: 100%; }
-.typeahead-search .typeahead-search-text {
-	box-sizing: border-box;
-	width: 100%;
-	padding: 5px 30px 5px 10px;
-	font-size: 16px;
-	background: url( 'images/search_glass.gifx' ) no-repeat scroll 99% 8px;
-	border: 1px solid #ccc;
-	z-index: 0;
-}
-.typeahead-search-submit { visibility: hidden; width: 1px; height: 1px; position: absolute; top: -9999px; }
-
-.tt-dropdown-menu {
-	width: 100%;
-	max-height: 250px;
-	overflow-y: auto;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	font-size: 16px;
-	background: #fff;
-}
-.tt-suggestion { padding: 10px; }
-.typeahead-search-noresults { padding: 10px; width: 100%; color: #4c4c4c; }
-.typeahead-search-suggestion-title {
-	margin: 0;
-	color: #4c4c4c;
-	font-size: 16px;
-	font-weight: normal;
-	line-height: 1.2;
-}
-.typeahead-search-suggestion-text {
-	overflow: hidden;
-	margin: 0;
-	color: #999;
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 1.5;
-	text-overflow: ellipsis;
-	max-height: 37px;
-}
-
-.tt-suggestion.tt-cursor { background: #278EFC; }
-.tt-suggestion.tt-cursor .typeahead-search-suggestion-title { color: #fff; }
-.tt-suggestion.tt-cursor .typeahead-search-suggestion-text { color: #fff; }
-
 /* Iframe pages */
 .branded-page-title {
 	margin: 20px 0 20px;
@@ -166,6 +126,12 @@ div.cms_header_text { display: none; }
 	text-transform: uppercase;
 }
 #catalog_frame, #support_frame { margin-top: 20px; }
+
+/* Home Page */
+.branded-home-title { margin-top: 40px; }
+.page-home .carousel { display: none; }
+.page-home .main-content { padding-right: 0; }
+.page-home .secondary-content { padding-left: 0; }
 
 /* Get Help + Catalog */
 .page-get_help .main-content > .row,

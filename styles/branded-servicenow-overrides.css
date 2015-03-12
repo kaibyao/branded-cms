@@ -19,10 +19,22 @@ table, input, select, button, input.text, textarea, input.button {
 html[data-doctype=true] body[data-formName="ui_page_render"] { margin: 0; }
 html[data-doctype=true] div.section_header_content_no_scroll { overflow: visible; }
 html[data-doctype=true] .list_nav.list_nav_top { background: transparent; }
+.list_nav.list_nav_top_border { border: 0 none; }
+#list_nav_hr_case { border: 0 none; }
 tr.io_label td { background: transparent !important; }
 div.form_title { font-size: 14px; }
 .label { display: block; font-size: inherit; line-height: inherit; }
 .label label { margin-bottom: 0; }
+.vcr_controls {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0px 10px;
+	border-left: none;
+	border-right: none;
+}
+button[name=vcr_first], button[name=vcr_back], button[name=vcr_next], button[name=vcr_last] { margin-left: 0; margin-right: 0; }
+button[name=vcr_last] { margin-right: 0; width: 36px; }
+INPUT.list_row_number_input { width: 4em; line-height: 1em; }
 
 .breadcrumb { padding: 0; background: transparent; }
 
@@ -54,7 +66,9 @@ html[data-doctype=true] .sc_category_item_left { padding-right: 20px; }
 .sc_cart_subtotal_row td { padding-top: 10px; }
 
 /* Live Feed */
-.main-content .live_feed_column { padding: 0; }
+.live_feed.selfie-lite { background: transparent !important; }
+.live_feed.selfie-lite .topbar { background: #fff; }
+.live_feed.selfie-lite .panel { border: 1px solid #ddd; }
 
 /* Knowledge */
 .row.search-bar { background: transparent; border-bottom: 0 none; }
@@ -62,5 +76,18 @@ html[data-doctype=true] .sc_category_item_left { padding-right: 20px; }
 .row.search-bar .buttons { padding-right: 0; }
 .row.homepage { margin: 60px -15px 0; }
 
+/* Knowledge Article */
+.snc-article-header-toolbar { display: none; }
+html[data-doctype=true] body[data-formName="ui_page_render"],
+body { padding: 0; }
+.kb-view-content-wrapper,
+.snc-article-header-author { margin: 0 !important; }
+.snc-article-footer-section-ratings,
+#kbCommentsAndLiveFeedDisplay { margin: 20px 0 !important; }
+
 /* Bootstrap Buttons */
 .btn-default:hover, .btn-destructive-subdued:hover, .btn-success-subdued:hover, .nav-segmented > li:hover, .btn-default.hover, .hover.btn-destructive-subdued, .hover.btn-success-subdued, .nav-segmented > li.hover { box-shadow: none; }
+
+/* Edit Page */
+#render_layout_preview .branded-2col-8-4 .main-container #dropzone10 { width: 66%; }
+#render_layout_preview .branded-2col-8-4 .main-container #dropzone15 { width: 33%; float: right; }

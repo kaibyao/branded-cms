@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var question = RP.getParameterValue( 'question' ),
+		iframe = new GlideRecord( 'content_block_iframe' ),
+		questionToCatalogItemUrlMap = {
+			'benefits' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=15c6756137220100e90d4e06efbe5d90${AMP}sysparm_link_parent=b3905e14ef0311004c7236caa5c0fb76${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog',
+			'vacation' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=7de8356137220100e90d4e06efbe5d5a${AMP}sysparm_link_parent=b3905e14ef0311004c7236caa5c0fb76${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog',
+			'payroll' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=2a6c63c9ef22010047920fa3f82256fd${AMP}sysparm_link_parent=b3905e14ef0311004c7236caa5c0fb76${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog',
+			'policies' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=b26641f31b220100e90d928f3d0713a0${AMP}sysparm_link_parent=b3905e14ef0311004c7236caa5c0fb76${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog',
+			'career' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=933641f31b220100e90d928f3d071368${AMP}sysparm_link_parent=35a05e14ef0311004c7236caa5c0fb81${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog',
+			'dependents' : 'com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=a691e91d0f6161002b58f25be1050efc${AMP}sysparm_link_parent=4b880bf8ef22010047920fa3f8225618${AMP}sysparm_catalog=bf1a3dd0ef0311004c7236caa5c0fbae${AMP}sysparm_catalog_view=catalog_hr_catalog'
+		},
+		url = questionToCatalogItemUrlMap[ question ];
+
+	gr.initialize();
+	gr.frame_name = 'catalog_frame';
+	gr.url = url;
+	gr.sizing = 'expand';
+	gr.putCurrent();
+</g:evaluate>
+<g:render_content_block_iframe />
+<g:evaluate>
+	gr.popCurrent();
+</g:evaluate>
+
+</j:jelly>

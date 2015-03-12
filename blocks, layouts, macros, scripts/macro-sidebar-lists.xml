@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var replaceMap = {
+			'(' : '',
+			')' : '',
+			' ' : '-',
+			'&amp;' : '-'
+		},
+		replaceFunc = function( matched ) {
+			return replaceMap[ matched ];
+		},
+		blockClass = '${jvar_title}'.toLowerCase().replace( /\(|\)|\s|&amp;/ig, replaceFunc );
+</g:evaluate>
+
+<div class="branded-secondary-block branded-secondary-${blockClass}">
+	<h3 class="branded-secondary-block-title branded-secondary-${blockClass}-title">${jvar_title}</h3>
+
+	<ul class="branded-secondary-block-list">
+		<g:for_each_record file="${current}" max="${jvar_max_entries}">
+			<li class="branded-secondary-block-list-item">
+				<a class="branded-secondary-block-list-item-link" href="knowledgebase.do?article=${current.sys_id}">
+					<span class="branded-secondary-block-list-item-link-shortdescription">${current.short_description.getDisplayValue()}</span>
+					<span class="branded-secondary-block-list-item-link-description">${current.text.getDisplayValue()}</span>
+					<span class="branded-secondary-block-list-item-link-published">${current.published.getDisplayValue()}</span>
+				</a>
+			</li>
+		</g:for_each_record>
+	</ul>
+
+</div>
+
+</j:jelly>

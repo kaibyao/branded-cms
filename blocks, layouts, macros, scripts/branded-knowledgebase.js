@@ -6,8 +6,8 @@ define( [ 'jquery' ], function( $j ) {
 var iframe = document.getElementById( 'knowledge_frame' ),
 	$iframe = $j( iframe ),
 	$kbDoc = $j( iframe.contentDocument ),
-	$kbBody = $kbDoc.find( 'body' ),
-	iframeHeight = $kbBody.css( 'height' ),
+	$kbBody,
+	iframeHeight,
 
 	resizeIframe = function() {
 		iframeHeight = $kbBody.css( 'height' );
@@ -42,6 +42,9 @@ var iframe = document.getElementById( 'knowledge_frame' ),
 	};
 
 $kbDoc.ready( function() {
+	$kbBody = $kbDoc.find( 'body' );
+	iframeHeight = $kbBody.css( 'height' );
+
 	styleKbIframe();
 
 	setTimeout( updateLayout, 800 );

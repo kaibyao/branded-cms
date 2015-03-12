@@ -2,13 +2,9 @@
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 
 <g:evaluate jelly="true">
-	var kbSysId = RP.getParameterValue( 'kb' ),
+	var articleSysId = RP.getParameterValue( 'article' ),
 		iframe = new GlideRecord( 'content_block_iframe' ),
-	url = '$knowledge.do#/search?kb=';
-
-	if ( !!kbSysId ) {
-		url += kbSysId;
-	}
+		url = ( !!articleSysId ) ? 'kb_view.do?sys_kb_id=' + articleSysId : '$knowledge.do#/search?kb=ffcdf061ff2121009b20ffffffffffa4';
 
 	gr.initialize();
 	gr.frame_name = 'knowledge_frame';

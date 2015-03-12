@@ -73,7 +73,7 @@
 			$j( '.branded-admin-nav' ).prependTo( 'body' ).show();
 
 			// fixing menu links disappearing after hover
-			$j( 'td.cms_header_top_menu a, .drag_section_header a, .cms_header_search a, .cms_header_search input, button, .page' ).off();
+			$j( 'a, input, button, .page, .table-col-header, img, td' ).off();
 
 			// Chat div
 			$j( document.createElement( 'div' ) ).
@@ -83,7 +83,32 @@
 				prependTo( 'td.cms_header_text' );
 
 			$j( '.branded-chat-link' ).each( function( i, el ) {
-				$j( el ).on( 'click', function() { CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title ); return false; } );
+				$j( el ).on( 'click', function() {
+					CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title );
+					return false;
+				} );
+			} );
+
+			// chat for the HR site
+			$j( '.branded-chat-container a' ).on( 'click', function() {
+				CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ 1 ].sys_id, chatLinks[ 1 ].title );
+				return false;
+			} );
+
+			// Sidebar text unescaping (Couldn't figure out how to this in Jelly)
+			$j( '.branded-secondary-block-list-item-link-description' ).each( function( i, el ) {
+				var $unescapedHtml = $j( document.createElement( 'div' ) ).append( $j( document.createDocumentFragment() ).append( el.innerHTML ).text() );
+
+				$unescapedHtml.children().each( function( i, unescapedHtmlPart ) {
+					var $unescapedHtmlPart = $j( unescapedHtmlPart ),
+						trimmedText = $j.trim( $unescapedHtmlPart.text() );
+
+					if ( !trimmedText ) {
+						$unescapedHtmlPart.remove();
+					}
+				} );
+
+				el.innerHTML = $unescapedHtml.text();
 			} );
 		},
 
@@ -93,7 +118,7 @@
 
 	$j( document ).ready( function() {
 		// testing if the page elements have loaded. If so, immediately apply styles. Otherwise, wait a second. This is mainly to offset the extra latency involved when editing a page.
-		if ( $j( 'td.cms_header_logo' ).length ) {
+		if ( window.location.pathname.indexOf( 'edit_content.do' ) === -1 ) {
 			applyBrandedStyles();
 		} else {
 			setTimeout( function() { applyBrandedStyles(); hideAdminBar(); }, 400 );
