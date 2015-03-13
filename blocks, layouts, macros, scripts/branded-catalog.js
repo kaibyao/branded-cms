@@ -2,8 +2,6 @@ define( [ 'jquery', 'underscore', 'backbone' ], function( $j, _, Backbone ) {
 'use strict';
 
 var iframe = document.getElementById( 'catalog_frame' ),
-	$iframe = $j( iframe ),
-	iframeHeight,
 	menuIndexMap = {
 		'facilities' : 0,
 		'finance'    : 1,
@@ -11,43 +9,6 @@ var iframe = document.getElementById( 'catalog_frame' ),
 		'it'         : 3,
 		'legal'      : 4,
 		'marketing'  : 5
-	},
-
-	resizeIframe = function() {
-		var $iframeDoc = $j( iframe.contentDocument ),
-			$iframeBody = $iframeDoc.find( 'body' );
-
-		iframeHeight = $iframeBody.css( 'height' );
-		$iframe.css( 'height', iframeHeight );
-	},
-
-	checkResize = function() {
-		var $iframeDoc = $j( iframe.contentDocument ),
-			$iframeBody = $iframeDoc.find( 'body' ),
-			currentHeight = $iframeBody.css( 'height' );
-
-		if ( iframeHeight !== currentHeight ) {
-			resizeIframe();
-		}
-	},
-
-	styleIframe = function() {
-		var $iframeDoc = $j( iframe.contentDocument );
-
-		// add overriding styles to iframe
-		$iframeDoc.find( 'head' ).append( '<link rel="stylesheet" type="text/css" href="/d7fafb024da0710062c55dc1f2a64ee3.cssdbx" />' );
-
-		setInterval( checkResize, 500 );
-	},
-
-	updateLayout = function() {
-		var $iframeDoc = $j( iframe.contentDocument ),
-			$iframeBody = $iframeDoc.find( 'body' );
-
-		iframeHeight = $iframeBody.css( 'height' );
-
-		// resize iframe
-		resizeIframe();
 	},
 
 	selectViewCore = {
@@ -59,16 +20,6 @@ var iframe = document.getElementById( 'catalog_frame' ),
 
 		redirectIframe : function( $catalogMenu ) {
 			iframe.src = $catalogMenu.find( 'a' ).first().attr( 'href' );
-			$j( iframe.contentDocument ).ready( this.setupIframePage );
-		},
-
-		setupIframePage : function() {
-			setTimeout( function() {
-				styleIframe();
-				updateLayout();
-			}, 800 );
-
-			setInterval( checkResize, 500 );
 		},
 
 		firstLoadCatalog : function() {
@@ -117,10 +68,6 @@ var iframe = document.getElementById( 'catalog_frame' ),
 
 $j( document ).ready( function() {
 	selectView.firstLoadCatalog();
-
-	$j( '.main-content .row .cms_menu_section_blocks .cms_menu_section_blocks_title a' ).on( 'click', selectView.setupIframePage );
-
-	$iframe.on( 'load', selectView.setupIframePage );
 } );
 
 } );

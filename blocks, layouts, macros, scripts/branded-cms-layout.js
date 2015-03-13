@@ -73,7 +73,7 @@
 			$j( '.branded-admin-nav' ).prependTo( 'body' ).show();
 
 			// fixing menu links disappearing after hover
-			$j( 'td.cms_header_top_menu a, .drag_section_header a, .cms_header_search a, .cms_header_search input, button, .page' ).off();
+			$j( 'a, input, button, .page, .table-col-header, img, td' ).off();
 
 			// Chat div
 			$j( document.createElement( 'div' ) ).
@@ -82,18 +82,66 @@
 				append( $j( 'div.cms_header_top_menu' ).children().filter( ':not(:empty)' ) ).
 				prependTo( 'td.cms_header_text' );
 
-			$j( '.branded-chat-link' ).each( function( i, el ) {
-				$j( el ).on( 'click', function() { CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title ); return false; } );
+			// chat for the HR site
+			$j( '.branded-chat-container a' ).on( 'click', function() {
+				CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ 1 ].sys_id, chatLinks[ 1 ].title );
+				return false;
+			} );
+
+			$j( '.branded-chat-link' ).off().each( function( i, el ) {
+				$j( el ).on( 'click', function() {
+					CustomEvent.fire(LiveEvents.LIVE_EVENT, LiveEvents.LIVE_WINDOW_JOIN_QUEUE_QUERY, chatLinks[ i ].sys_id, chatLinks[ i ].title );
+					return false;
+				} );
+			} );
+
+			// Sidebar text unescaping (Couldn't figure out how to this in Jelly)
+			$j( '.branded-secondary-block-list-item-link-description' ).each( function( i, el ) {
+				var $unescapedHtml = $j( document.createElement( 'div' ) ).append( $j( document.createDocumentFragment() ).append( el.innerHTML ).text() );
+
+				$unescapedHtml.children().each( function( i, unescapedHtmlPart ) {
+					var $unescapedHtmlPart = $j( unescapedHtmlPart ),
+						trimmedText = $j.trim( $unescapedHtmlPart.text() );
+
+					if ( !trimmedText ) {
+						$unescapedHtmlPart.remove();
+					}
+				} );
+
+				el.innerHTML = $unescapedHtml.text();
 			} );
 		},
 
 		hideAdminBar = function() {
 			$j( '.branded-admin-nav' ).hide();
+		},
+
+		styleIframe = function( iframeEl ) {
+			return function() {
+				// add overriding styles to iframe
+				var $iframeDoc = $j( iframeEl.contentDocument );
+
+				$iframeDoc.find( 'head' ).append( '<link rel="stylesheet" type="text/css" href="/d7fafb024da0710062c55dc1f2a64ee3.cssdbx" />' );
+
+				setInterval( checkResizeIframe( $j( iframeEl ) ), 700 );
+			}
+		},
+
+		checkResizeIframe = function( $iframe ) {
+			return function() {
+				var $iframeBody = $j( $iframe[ 0 ].contentDocument ).find( 'body' ),
+					iframeBodyHeight = $iframeBody.css( 'height' ),
+					iframeHeight = $iframe.css( 'height' );
+
+				if ( iframeHeight !== iframeBodyHeight ) {
+					$iframe.css( 'height', iframeBodyHeight );
+				}
+			}
 		};
 
 	$j( document ).ready( function() {
 		// testing if the page elements have loaded. If so, immediately apply styles. Otherwise, wait a second. This is mainly to offset the extra latency involved when editing a page.
-		if ( $j( 'td.cms_header_logo' ).length ) {
+		if ( window.location.pathname.indexOf( 'edit_content.do' ) === -1 ) {
 			applyBrandedStyles();
 		} else {
 			setTimeout( function() { applyBrandedStyles(); hideAdminBar(); }, 400 );
@@ -110,6 +158,18 @@
 
 			return wb;
 		};
+
+		// our iframe resizing is broken. this script fixes it + override theme styles
+		$j( 'iframe' ).each( function( i, el ) {
+			var $iframe = $j( el ),
+				$iframeDoc = $j( el.contentDocument );
+
+			$iframeDoc.ready( function() {
+				styleIframe( el )();
+
+				$iframe.on( 'load', styleIframe( el ) );
+			} );
+		} );
 	} );
 
 } )();
