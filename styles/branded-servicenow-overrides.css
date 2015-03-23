@@ -19,11 +19,15 @@ table, input, select, button, input.text, textarea, input.button {
 html[data-doctype=true] body[data-formName="ui_page_render"] { margin: 0; }
 html[data-doctype=true] div.section_header_content_no_scroll { overflow: visible; }
 html[data-doctype=true] .list_nav.list_nav_top { background: transparent; }
+.section_header_body_no_scroll { height: auto; max-height: none; }
+.section_header_content_no_scroll { position: static !important; max-height: none; }
+.section_header_div_no_scroll { position: static; }
 tr.io_label td { background: transparent !important; }
 div.form_title { font-size: 14px; }
 .label { display: block; font-size: inherit; line-height: inherit; }
 .label label { margin-bottom: 0; }
-.list_nav.list_nav_top { border: 0 none; }
+.list_nav.list_nav_top_border { position: static !important; border: 0 none; }
+.list_nav_spacer { margin-top: 0 !important; }
 
 .breadcrumb { padding: 0; background: transparent; }
 
@@ -63,7 +67,10 @@ html[data-doctype=true] .sc_category_item_left { padding-right: 20px; }
 .row.search-bar .buttons { padding-right: 0; }
 .row.homepage { margin: 60px -15px 0; }
 .row.homepage .hpMainNav { display: none; }
-.snc-article-header-toolbar { display: none; }
+.snc-article-header-toolbar { background: transparent !important; }
+.snc-kb-view-wrapper,
+.snc-kb-view-content-wrapper { height: auto !important; overflow: visible !important; }
+.snc-kb-view-wrapper { position: static !important; }
 
 /* Bootstrap Buttons */
 .btn-default:hover, .btn-destructive-subdued:hover, .btn-success-subdued:hover, .nav-segmented > li:hover, .btn-default.hover, .hover.btn-destructive-subdued, .hover.btn-success-subdued, .nav-segmented > li.hover { box-shadow: none; }

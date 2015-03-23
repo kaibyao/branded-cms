@@ -14,11 +14,10 @@
 		background: rgba(0, 0, 0, 0.7);
 	}
 
-	.page-home .home-block-row { margin-top: -145px; margin-bottom: 15px; }
-	.page-home .home-block-row::after { display: table; content: ' '; }
-	.page-home .home-block-row .cms_menu_section_blocks { margin: 0; background: transparent; }
-	.page-home .home-block-row .cms_menu_section_blocks > table { background: #111; background: rgba( 0, 0, 0, 0.8 ); }
-	.page-home .home-block-row .cms_menu_section_blocks_title { padding-left: 5px; }
+	.branded-cms-home-menu { margin-top: -145px; margin-bottom: 15px; }
+	/*.branded-cms-home-menu .cms_menu_section_blocks { margin: 0; background: transparent; }
+	.branded-cms-home-menu .cms_menu_section_blocks > table { background: #111; background: rgba( 0, 0, 0, 0.8 ); }
+	.branded-cms-home-menu .cms_menu_section_blocks_title { padding-left: 5px; }*/
 
 	.main-content .cms_menu_section_blocks .main-content-menu-block-items { padding-bottom: 0; }
 

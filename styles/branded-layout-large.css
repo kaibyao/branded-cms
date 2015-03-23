@@ -2,6 +2,8 @@
 	.page-home .carousel-inner,
 	.page-home .carousel-inner > .item { height: 450px; }
 
-	.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2 { font-size: 20px; }
-	.main-content .cms_menu_section_blocks .cms_menu_second_level_text { font-size: 14px; }
+	.main-content .cms_menu_section_blocks .cms_menu_section_blocks_title h2,
+	.branded-horizontal-block-title { font-size: 20px; }
+	.main-content .cms_menu_section_blocks .cms_menu_second_level_text,
+	.branded-horizontal-block-subtitle { font-size: 14px; }
 }
