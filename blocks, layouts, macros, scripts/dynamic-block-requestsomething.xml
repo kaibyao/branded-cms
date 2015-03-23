@@ -27,15 +27,15 @@
 		</j:if>
 		<j:if test="${catalog == ''}">
 			<button class="branded-catalog-dropdown-button btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" data-active="it" aria-expanded="false">
-				<span class="branded-catalog-dropdown-button-text">Facilities</span> <span class="caret"></span>
+				<span class="branded-catalog-dropdown-button-text">IT</span> <span class="caret"></span>
 			</button>
 		</j:if>
 
 		<ul class="branded-catalog-dropdown dropdown-menu" role="menu">
+			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="it">IT</a></li>
 			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="facilities">Facilities</a></li>
 			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="finance">Finance</a></li>
 			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="hr">Human Resources</a></li>
-			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="it">IT</a></li>
 			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="legal">Legal</a></li>
 			<li class="branded-catalog-dropdown-item"><a class="branded-catalog-dropdown-link" href="javascript:void(0);" data-catalog="marketing">Marketing</a></li>
 		</ul>
