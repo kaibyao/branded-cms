@@ -33,6 +33,7 @@ div.form_title { font-size: 14px; }
 
 /* Service Catalog */
 #category_description, #navigatordetailTop, #back_cell, .header_bar_title { display: none !important; }
+#goto_home { display: none; }
 
 .sc_category_item .details_div td,
 .sc_category_item_hover .details_div td,
