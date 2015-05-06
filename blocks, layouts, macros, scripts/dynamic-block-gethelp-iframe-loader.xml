@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var department = RP.getParameterValue( 'department' ).toLowerCase(),
+		menuGr = new GlideRecord( 'menu_section' ),
+		supportFrame = new GlideRecord( 'content_block_iframe' ),
+		supportIdMap = [
+			{ department : 'it', sysId : '23bc1ce84db0b10062c55dc1f2a64e2a' },
+			{ department : 'facilities', sysId : 'a9700d204df0b10062c55dc1f2a64e38' },
+			{ department : 'finance', sysId : '0f39f2164f227100c163e321a310c74d' },
+			{ department : 'hr', sysId : 'b4a9ac6c4db0b10062c55dc1f2a64ee2' },
+			{ department : 'legal', sysId : '88b0cb564f227100c163e321a310c7cb' },
+			{ department : 'marketing', sysId : '467347964f227100c163e321a310c799' }
+		],
+		supportIds = [],
+		supportMenuUrls = {},
+		supportUrl,
+		i;
+
+	for ( i = 0; i &lt; supportIdMap.length; i++ ) {
+		supportIds.push( supportIdMap[ i ].sysId );
+	}
+
+	menuGr.addQuery( 'content_block_menu', 'IN', supportIds.join( ',' ) );
+	menuGr.orderBy( 'order' );
+	menuGr.query();
+
+	while ( menuGr.next() ) {
+		if ( typeof supportMenuUrls[ menuGr.content_block_menu ] === 'undefined' ) {
+			supportMenuUrls[ menuGr.content_block_menu ] = [];
+		}
+
+		supportMenuUrls[ menuGr.content_block_menu ].push( menuGr.url.toString() );
+	}
+
+	if ( department ) {
+		for ( i = 0; i &lt; supportIdMap.length; i++ ) {
+			if ( department == supportIdMap[ i ].department ) {
+				supportUrl = supportMenuUrls[ supportIdMap[ i ].sysId ][ 0 ]
+				i = supportIdMap.length;
+			}
+		}
+	} else {
+		supportUrl = supportMenuUrls[ supportIdMap[ 0 ].sysId ][ 0 ];
+	}
+
+	supportFrame.initialize();
+	supportFrame.frame_name = 'support_frame';
+	supportFrame.url = supportUrl;
+	supportFrame.sizing = 'expand';
+	supportFrame.putCurrent();
+</g:evaluate>
+<g:render_content_block_iframe />
+<g:evaluate>
+	supportFrame.popCurrent();
+</g:evaluate>
+
+</j:jelly>

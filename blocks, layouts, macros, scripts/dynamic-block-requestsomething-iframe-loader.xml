@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:evaluate jelly="true">
+	var catalog = RP.getParameterValue( 'catalog' ).toLowerCase(),
+		menuGr = new GlideRecord( 'menu_section' ),
+		catalogFrame = new GlideRecord( 'content_block_iframe' ),
+		catalogIdMap = [
+			{ catalog : 'it', sysId : '11e20e664d24710062c55dc1f2a64eee' },
+			{ catalog : 'facilities', sysId : '670b5af74dac710062c55dc1f2a64e2b' },
+			{ catalog : 'finance', sysId : 'f72ec5664fa27100c163e321a310c77c' },
+			{ catalog : 'hr', sysId : '6ffca67b4dac710062c55dc1f2a64e75' },
+			{ catalog : 'legal', sysId : '7bcc435a4f227100c163e321a310c764' },
+			{ catalog : 'marketing', sysId : '5f181da64fa27100c163e321a310c7ed' }
+		],
+		catalogIds = [],
+		catalogMenuUrls = {},
+		catalogUrl,
+		i;
+
+	for ( i = 0; i &lt; catalogIdMap.length; i++ ) {
+		catalogIds.push( catalogIdMap[ i ].sysId );
+	}
+
+	menuGr.addQuery( 'content_block_menu', 'IN', catalogIds.join( ',' ) );
+	menuGr.orderBy( 'order' );
+	menuGr.query();
+
+	while ( menuGr.next() ) {
+		if ( typeof catalogMenuUrls[ menuGr.content_block_menu ] === 'undefined' ) {
+			catalogMenuUrls[ menuGr.content_block_menu ] = new Array();
+		}
+
+		catalogMenuUrls[ menuGr.content_block_menu ].push( menuGr.url.toString() );
+	}
+
+	if ( catalog ) {
+		for ( i = 0; i &lt; catalogIdMap.length; i++ ) {
+			if ( catalog == catalogIdMap[ i ].catalog ) {
+				catalogUrl = catalogMenuUrls[ catalogIdMap[ i ].sysId ][ 0 ]
+				i = catalogIdMap.length;
+			}
+		}
+	} else {
+		catalogUrl = catalogMenuUrls[ catalogIdMap[ 0 ].sysId ][ 0 ];
+	}
+
+	catalogFrame.initialize();
+	catalogFrame.frame_name = 'catalog_frame';
+	catalogFrame.url = catalogUrl;
+	catalogFrame.sizing = 'expand';
+	catalogFrame.putCurrent();
+</g:evaluate>
+<g:render_content_block_iframe />
+<g:evaluate>
+	catalogFrame.popCurrent();
+</g:evaluate>
+
+</j:jelly>
