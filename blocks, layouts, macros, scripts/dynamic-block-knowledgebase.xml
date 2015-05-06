@@ -10,15 +10,15 @@
 		url += kbSysId;
 	}
 
-	gr.initialize();
-	gr.frame_name = 'knowledge_frame';
-	gr.url = url;
-	gr.sizing = 'expand';
-	gr.putCurrent();
+	iframe.initialize();
+	iframe.frame_name = 'knowledge_frame';
+	iframe.url = url;
+	iframe.sizing = 'expand';
+	iframe.putCurrent();
 </g:evaluate>
 <g:render_content_block_iframe />
 <g:evaluate>
-	gr.popCurrent();
+	iframe.popCurrent();
 </g:evaluate>
 
 </j:jelly>

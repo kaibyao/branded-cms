@@ -77,6 +77,8 @@ div.cms_header_text { display: none; }
 /*.branded-cms-home-menu .branded-horizontal-block:last-child { margin-bottom: 0; }*/
 
 /* Home Pages */
+div[dropzone=true] { min-height: 100px; }
+
 .branded-horizontal-block-header::after { display: table; content: ''; clear: both; }
 .branded-horizontal-block-icon-container,
 .branded-horizontal-block-text { float: left; }
