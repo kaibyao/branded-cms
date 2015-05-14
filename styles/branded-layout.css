@@ -84,6 +84,8 @@ div.cms_header_text { display: none; }
 .secondary-content .branded-secondary-block-list-item-link:hover .branded-simple-knowledge-list-item-link-published { color: #999; }
 
 /* Home Pages */
+div[dropzone=true]:not(.layout_preview) { min-height: 100px; }
+
 .main-content .cms_menu_section_blocks { display: none !important; }
 .main-content .row .cms_menu_section_blocks,
 .main-content .home-block-row .cms_menu_section_blocks { display: block !important; }
